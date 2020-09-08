@@ -2,12 +2,12 @@
 <!--DOCTYPE photo SYSTEM "photo.dtd"-->
 
 <photo>
-   <type>stock</type>
-   <creator>Simon</creator>
+   <type>hd</type>
+   <creator>shoultz</creator>
    <mimetype>text/html</mimetype>
    <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
    <keywords>
-      <keyword>blackandwhite</keyword>
-      <keyword>keyboard</keyword>
+      <keyword>color</keyword>
+      <keyword>mouse</keyword>
    </keywords>
 </photo>
