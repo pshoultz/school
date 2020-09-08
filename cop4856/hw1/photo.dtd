@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT photo (type, creator, mimetype, keywords, keyword)>
+<!ELEMENT photo (type, creator, mimetype, location, keywords, keyword)>
 <!ELEMENT type (#PCDATA)>
 <!ELEMENT creator (#PCDATA)>
 <!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
 <!ELEMENT keywords (keyword*)>
 <!ELEMENT keyword (#PCDATA)>
