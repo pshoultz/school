@@ -2,7 +2,7 @@
 <!DOCTYPE photo SYSTEM "photo.dtd">
 
 <photo>
-   <type id=123>stock</type>
+   <type>stock</type>
    <creator>Simon</creator>
    <mimetype>text/html</mimetype>
    <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
@@ -10,4 +10,4 @@
       <keyword>blackandwhite</keyword>
       <keyword>keyboard</keyword>
    </keywords>
-</photo>
+</photo></Photo>
