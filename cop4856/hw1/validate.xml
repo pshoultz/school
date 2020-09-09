@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--DOCTYPE photo SYSTEM "photo.dtd"-->
+<!DOCTYPE photo SYSTEM "photo.dtd">
 
 <photo>
    <type>hd</type>
@@ -8,5 +8,6 @@
    <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
    <keywords>
       <keyword>color</keyword>
+      <keyword>asdfasdf</keyword>
    </keywords>
 </photo>

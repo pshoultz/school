@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--DOCTYPE photo SYSTEM "photo.dtd"-->
+<!DOCTYPE photo SYSTEM "photo.dtd">
 
 <photo>
    <type>stock</type>
