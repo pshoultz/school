@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gallery>
+	<photo>
+	   <type>stock</type>
+	   <creator>
+	   	<name>paul</name>
+		<url>www.url1.com</url>   	
+	   </creator>
+	   <mimetype>text/html</mimetype>
+	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <keywords>
+	      <keyword>11</keyword>
+	      <keyword>11</keyword>
+	   </keywords>
+	</photo>
+	
+	<photo>
+	   <type>stock</type>
+	   <creator>
+	   	<name>mark</name>
+		<url>www.url2.com</url>   	
+	   </creator>
+	   <mimetype>text/html</mimetype>
+	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <keywords>
+	      <keyword>22</keyword>
+	      <keyword>key22board</keyword>
+	   </keywords>
+	</photo>
+	
+	<photo>
+	   <type>stock</type>
+	   <creator>
+	   	<name>david</name>
+		<url>www.url3.com</url>   	
+	   </creator>
+	   <mimetype>text/html</mimetype>
+	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <keywords>
+	      <keyword>33</keyword>
+	      <keyword>33</keyword>
+	   </keywords>
+	</photo>
+</gallery>
