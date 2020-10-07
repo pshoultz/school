@@ -22,7 +22,7 @@ public class Parser {
 	public void parse(String filename) {
 		System.out.print("parsing...");
 		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		/*DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -46,7 +46,7 @@ public class Parser {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 	}
 
