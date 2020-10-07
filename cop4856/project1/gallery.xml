@@ -2,13 +2,14 @@
 
 <gallery>
 	<photo>
+		<title>title 1</title>
 	   <type>stock</type>
 	   <creator>
 	   	<name>paul</name>
 		<url>www.url1.com</url>   	
 	   </creator>
 	   <mimetype>text/html</mimetype>
-	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-0000000/ (Links to an external site.)</location>
 	   <keywords>
 	      <keyword>apple</keyword>
 	      <keyword>banana</keyword>
@@ -16,13 +17,14 @@
 	</photo>
 	
 	<photo>
+		<title>title 2</title>
 	   <type>stock</type>
 	   <creator>
 	   	<name>mark</name>
 		<url>www.url2.com</url>   	
 	   </creator>
 	   <mimetype>text/html</mimetype>
-	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <location>https://google.com(Links to an external site.)</location>
 	   <keywords>
 	      <keyword>cat</keyword>
 	      <keyword>dog</keyword>
@@ -30,13 +32,14 @@
 	</photo>
 	
 	<photo>
+		<title>title 3</title>
 	   <type>stock</type>
 	   <creator>
 	   	<name>david</name>
 		<url>www.url3.com</url>   	
 	   </creator>
 	   <mimetype>text/html</mimetype>
-	   <location>https://pixabay.com/photos/keyboard-computer-keys-white-886462/ (Links to an external site.)</location>
+	   <location>https://amazon.com (Links to an external site.)</location>
 	   <keywords>
 	      <keyword>elephant</keyword>
 	      <keyword>frog</keyword>
