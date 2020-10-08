@@ -1,1 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<gallery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gallery.xsd">
+	<photo>
+		<title id="123">title 1</title><!-- title has no attributes error -->
+		<type>stock</type>
+		<creator>
+			<name>paul</name>
+			<url>www.url1.com</url>
+		</creator>
+		<mimetype>text/html</mimetype>
+		<location>https://pixabay.com/photos/keyboard-computer-keys-white-0000000/
+			(Links to an external site.)</location>
+		<keywords>
+			<keyword>apple</keyword>
+			<keyword>banana</keyword>
+		</keywords>
+	</photo>
+
+	<photo>
+		<title>title 2</title>
+		<type>stock</type>
+		<creator>
+			<name>mark</name>
+			<url>www.url2.com</url>
+		</creator>
+		<mimetype>text/html</mimetype>
+		<location>https://google.com(Links to an external site.)</location>
+		<keywords>
+			<keyword>cat</keyword>
+			<keyword>dog</keyword>
+		</keywords>
+	</photo>
+
+	<photo>
+		<title>title 3</title>
+		<type>stock</type>
+		<creator>
+			<name>david</name>
+			<url>www.url3.com</url>
+		</creator>
+		<mimetype>text/html</mimetype>
+		<location>https://amazon.com (Links to an external site.)</location>
+		<keywords>
+			<keyword>elephant</keyword>
+			<keyword>frog</keyword>
+		</keywords>
+	</photo>
+</gallery>

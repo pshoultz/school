@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<gallery>
+<gallery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gallery.xsd">
 	<photo>
 		<title>title 1</title>
 		<type>stock</type>

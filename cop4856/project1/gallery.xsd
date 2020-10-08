@@ -1,3 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/gallery" xmlns:tns="http://www.example.org/gallery" elementFormDefault="qualified">
-</schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="gallery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="photo" maxOccurs="unbounded"/>	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="photo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title" type="xs:string"/>
+				<xs:element name="type" type="xs:string"/>
+				<xs:element ref="creator"/>
+				<xs:element name="mimetype" type="xs:string"/>
+				<xs:element name="location" type="xs:string"/>
+				<xs:element ref="keywords"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="creator">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="url" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="keywords">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="keyword" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
