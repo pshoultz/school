@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery Remote</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/DVDService/DVDService",
+                    dataType: "xml",
+                    success:
+                            function (xml) {
+                                $(xml).find('dvd').each(function () {
+                                    var title = $(this).find('title').text();
+                                    var genre = $(this).find('genre').text();
+                                    $('<li></li>')
+                                            .html(title + ' (' + genre + ')')
+                                            .appendTo('#update-target ol');
+                                }); //close each(
+                            },
+                    error: function (xhr, status, error) {
+                        var errorMessage = xhr.status + ': ' + xhr.statusText;
+                        alert('Error - ' + errorMessage);
+                    }
+                }); //close $.ajax(
+            }); //close $(
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to AJAX Remote</h1>
+
+        <div id='update-target'>            
+            <ol></ol>
+        </div>
+    </body>
+
+</body>
+</html>
