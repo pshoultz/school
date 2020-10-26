@@ -5,43 +5,39 @@ and open the template in the editor.
 <!doctype html>
 <html>
     <head>
-        <title>AJAX Remote - XML</title>
+        <title>Project 2</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         
-        <script>
+        <!--script>
             $(document).ready(function () {
                 $.ajax({
                     beforeSend: function (req) {
                         req.setRequestHeader("Accept", "text/html");
                     },
                     type: "GET",
-                    //url: "http://localhost:8080/DVDService/DVDServiceMultilingual",
-                    //dataType: "html",
-                    url: "http://localhost:8080/home/cop4856/eclipse-workspace/project2/JQueryAJAX/WebContent/library.json",
-                    dataType: "jsonp",
+                    url: "http://localhost:8080/DVDService/DVDServiceMultilingual",
+                    dataType: "html",
 
                     success:
                             function (response) {
-                                //$("html").html(response);
-                                console.log("hit");
+                                $("html").html(response);
                             },
                     error: function (xhr, status, error) {
                         var errorMessage = xhr.status + ': ' + xhr.statusText;
-                        console.log("failed")
                         alert('Error - ' + errorMessage);
                     }
                 }); //close $.ajax(
             }); //close $(
-        </script>
+        </script-->
     </head>
     <body>
-        <h1>AJAX Remote - HTML</h1>
-
-        <div id='update-target'>            
-            <ol></ol>
-        </div>
+        <h1>project 2</h1>
+         <form>
+		  <label>keywords separate by comma:</label><br>
+		  <input type="text" id="keywords"><br>
+		  <input type="submit" value="Submit">
+		</form> 
     </body>
-
 </body>
 </html>
