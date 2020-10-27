@@ -4,24 +4,28 @@ and open the template in the editor.
 -->
 <!doctype html>
 <html>
-    <head>
-        <title>Project 2</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        
-        <!--script>
+<head>
+<title>Project 3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+        	var gallery = {};
             $(document).ready(function () {
                 $.ajax({
-                    beforeSend: function (req) {
-                        req.setRequestHeader("Accept", "text/html");
-                    },
                     type: "GET",
-                    url: "http://localhost:8080/DVDService/DVDServiceMultilingual",
-                    dataType: "html",
-
+                    //url: "library2.json",
+                    url: "gallery.json",
+                    dataType: "json",
                     success:
-                            function (response) {
-                                $("html").html(response);
+                            function (obj) {
+                                //$('<strong></strong>').html(obj.dvds[0].title).appendTo('#main');
+                                //$('<strong></strong>').html(obj.gallery[0].title).appendTo('#main');
+                                //console.log(obj);
+                                gallery = obj.gallery;
+                                obj.gallery.forEach(function(photo){
+                                	//console.log(photo);
+                                });
                             },
                     error: function (xhr, status, error) {
                         var errorMessage = xhr.status + ': ' + xhr.statusText;
@@ -29,15 +33,41 @@ and open the template in the editor.
                     }
                 }); //close $.ajax(
             }); //close $(
-        </script-->
-    </head>
-    <body>
-        <h1>project 2</h1>
-         <form>
-		  <label>keywords separate by comma:</label><br>
-		  <input type="text" id="keywords"><br>
-		  <input type="submit" value="Submit">
-		</form> 
-    </body>
+            		
+            function validate(){
+            	$("#main").empty();
+            	var search = $("#search").val();
+				search = search.split(",");
+            	var found = false;
+            	debugger
+            	gallery.forEach(function(photo){
+            		photo.keywords.forEach(function(keyword){
+						search.forEach(function(s){
+							if(s === keyword && !found){
+	            				$('<strong></strong><br>').html(photo.type).appendTo('#main');
+	            				$('<strong></strong><br>').html(photo.title).appendTo('#main');
+	            				$('<strong></strong><br>').html(photo.creator.name).appendTo('#main');
+	            				$('<strong></strong><br>').html(photo.creator.url).appendTo('#main');
+	            				$('<strong></strong><br>').html(photo.location).appendTo('#main');
+	            				$('<strong></strong><br>').html(photo.keywords).appendTo('#main');
+	            				found = true;
+            				}		
+						})
+            		})
+            	});
+
+				if(!found){
+        			$('<strong></strong><br><br>').html("no photos found").appendTo('#main');
+        		}
+            }
+        </script>
+</head>
+<body>
+	<h1>Find photos by keywords</h1>
+	<label>keywords (separate with comma): </label> <input id="search"
+		type="text"><br> <br>
+	<button onclick="validate()">Submit</button><br><br>
+	<div id="main">
+	</div>
 </body>
 </html>
