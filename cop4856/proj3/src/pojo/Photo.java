@@ -4,8 +4,8 @@ import javax.json.bind.JsonbBuilder;
 
 public class Photo {
 	private String title;
-	private String stock;
-	private Object creator;
+	private String type;
+	private String creator;
 	private String mimeType;
 	private String location;
 	private String[] keywords;
@@ -15,33 +15,57 @@ public class Photo {
 		this.title = title;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return JsonbBuilder.create().toJson(this);
 	}
 
-	/*private String name;
-	private int age;
-	public Photo(String name, int age) {
-		super();
-		this.name = name;
-		this.age = age;
+	public String getType() {
+		return type;
 	}
-	public String getName() {
-		return name;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public String getTitle() {
+		return title;
 	}
-	public int getAge() {
-		return age;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public void setAge(int age) {
-		this.age = age;
+
+	public String getMimeType() {
+		return mimeType;
 	}
-	@Override
-	public String toString() {
-		return JsonbBuilder.create().toJson(this);
-	}*/
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String[] getKeywords() {
+		return keywords;
+	}
+
+	public void setKeywords(String[] keywords) {
+		this.keywords = keywords;
+	}
+	
+	public String getCreator() {
+		return creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
 }
