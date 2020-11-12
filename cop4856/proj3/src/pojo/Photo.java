@@ -10,6 +10,9 @@ public class Photo {
 	private String location;
 	private String[] keywords;
 	
+	public Photo() {
+	}
+	
 	public Photo(String title) {
 		super();
 		this.title = title;

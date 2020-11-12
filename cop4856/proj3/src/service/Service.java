@@ -45,9 +45,11 @@ public class Service extends HttpServlet {
 	      System.out.println("is: " + is.toString());
 	      Jsonb jsonb = JsonbBuilder.create();
 	      gallery = jsonb.fromJson(is,new ArrayList<Photo>(){}.getClass().getGenericSuperclass());
+	      
 	      //gallery = jsonb.fromJson(new FileReader(realPath), new ArrayList<Photo>(){}.getClass().getGenericSuperclass());
 
-	      System.out.println("gallery: " + gallery.size());
+	      System.out.println("gallery: " + gallery.toString());
+	      
 	   } catch (IOException e) {
 	      gallery = null;
 	      //System.out.println("null hit");

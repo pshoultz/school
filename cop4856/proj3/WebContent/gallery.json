@@ -1,5 +1,4 @@
-{
-	"gallery":[
+[
 		{
 			"title":"title 1",
 			"type":"stock ",
@@ -30,5 +29,4 @@
 				"elephant", "frog"
 			]
 		}
-	]
-}
+]
