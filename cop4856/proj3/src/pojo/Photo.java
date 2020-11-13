@@ -3,14 +3,15 @@ package pojo;
 import javax.json.bind.JsonbBuilder;
 
 public class Photo {
-	private String title;
-	private String type;
-	private String creator;
-	private String mimeType;
-	private String location;
-	private String[] keywords;
+	private String title = null;
+	private String type = null;
+	private String creator = null;
+	private String mimeType = null;
+	private String location = null;
+	private String[] keywords = null;
 	
 	public Photo() {
+		
 	}
 	
 	public Photo(String title) {

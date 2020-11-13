@@ -24,54 +24,80 @@ import pojo.Photo;
 @WebServlet("/Service")
 public class Service extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Service() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
+	ArrayList<Photo> gallery;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Service() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public void init() throws ServletException {
-	   System.out.println("start");
-	   super.init(); // important
-	   ServletContext context = getServletContext();
-	   ArrayList<Photo> gallery;
-	try {
-	      String realPath = context.getRealPath("/gallery.json");
-	      InputStream is = new FileInputStream(realPath);
-	      System.out.println("is: " + is.toString());
-	      Jsonb jsonb = JsonbBuilder.create();
-	      gallery = jsonb.fromJson(is,new ArrayList<Photo>(){}.getClass().getGenericSuperclass());
-	      
-	      //gallery = jsonb.fromJson(new FileReader(realPath), new ArrayList<Photo>(){}.getClass().getGenericSuperclass());
+		System.out.println("start");
+		super.init(); // important
+		ServletContext context = getServletContext();
+		try {
+			String realPath = context.getRealPath("/gallery.json");
+			InputStream is = new FileInputStream(realPath);
+			Jsonb jsonb = JsonbBuilder.create();
+			gallery = jsonb.fromJson(is, new ArrayList<Photo>() {
+			}.getClass().getGenericSuperclass());
 
-	      System.out.println("gallery: " + gallery.toString());
-	      
-	   } catch (IOException e) {
-	      gallery = null;
-	      //System.out.println("null hit");
-	   }
+		} catch (IOException e) {
+			gallery = null;
+		}
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String keyword = request.getParameter("keyword");
 		Person p = new Person("Hugo", 42);
-		Photo photo = new Photo("pic");
-        response.setContentType("application/json");
-		response.getWriter().append(p.toString());
-		response.getWriter().append(photo.toString());
-	     //System.out.println("test test");
+		
+		System.out.println("keyword:" + keyword);
+
+		//NOTE: this works, just remove when I turn in
+		/*if(request.getHeader("ACCEPT") != null) {
+			String header = request.getHeader("ACCEPT");
+			
+			if(header.indexOf("application/json") == -1) {
+		        response.sendError(415, "Bad ACCEPT");
+			}
+		}*/
+
+		if (keyword == null || keyword=="") {
+	        response.sendError(400, "Bad data");
+		} else {
+			
+			for(int i=0; i < gallery.size(); i++) {
+				for(int j=0; j < gallery.get(i).getKeywords().length; j++) {
+					if(gallery.get(i).getKeywords()[j].contains(keyword)){
+						System.out.println(request.getHeader("ACCEPT"));
+						response.setStatus(200, "ok");
+						response.setContentType("application/json");
+						response.getWriter().append(gallery.get(i).toString());
+					}else {
+						Photo photo = new Photo();
+						response.setContentType("application/json");
+						response.getWriter().append(photo.toString());
+					}
+				}
+			}
+		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
