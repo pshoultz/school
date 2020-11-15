@@ -63,13 +63,13 @@ public class Service extends HttpServlet {
 		System.out.println("keyword:" + keyword);
 
 		//NOTE: this works, just remove when I turn in
-		/*if(request.getHeader("ACCEPT") != null) {
-			String header = request.getHeader("ACCEPT");
+		if(request.getHeader("Accept") != null) {
+			String header = request.getHeader("Accept");
 			
 			if(header.indexOf("application/json") == -1) {
 		        response.sendError(415, "Bad ACCEPT");
 			}
-		}*/
+		}
 
 		if (keyword == null || keyword=="") {
 	        response.sendError(400, "Bad data");
