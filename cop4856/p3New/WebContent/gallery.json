@@ -1,0 +1,40 @@
+[
+		{
+			"cName": "Leonardo da Vinci",
+			"cURL": "https://en.wikipedia.org/wiki/Mona_Lisa",
+			"id": 1,
+			"keywords": [
+				"leonardo",
+				"smile",
+				"mona"
+			],
+			"location": "Louvre Museum",
+			"mime": "text/html",
+			"title": "Mona Lisa"
+		},
+		{	
+			"cName": "Mchelangelo",
+			"cURL": "https://en.wikipedia.org/wiki/The_Last_Judgment_(Michelangelo)",
+			"id": 12,
+			"keywords": [
+				"michelangelo",
+				"church",
+				"italy"
+			],
+			"location": "Sistine Chapel",
+			"mime": "text/html",
+			"title": "The Last Judgement"
+		},
+		{
+			"cName": "Vincent Van Gogh",
+			"cURL": "https://en.wikipedia.org/wiki/The_Starry_Night",
+			"id": 12,
+			"keywords": [
+				"vincent",
+				"ear"
+			],
+			"location": "The Museum of Modern Art",
+			"mime": "text/html",
+			"title": "The Starry Night"
+		}
+	]
