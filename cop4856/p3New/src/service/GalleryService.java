@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jose4j.json.internal.json_simple.JSONArray;
+import org.jose4j.json.internal.json_simple.JSONObject;
+
 import model.Model;
 // import pojo.Photo;
 import pojo.Photo;
@@ -59,32 +62,26 @@ public class GalleryService extends HttpServlet {
 		/*if (!request.getHeader("Accept").toLowerCase().equals("application/json")) {
 			response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
 			return;
-		}
-		String keyword = request.getParameter("keyword");
-		if (keyword == null) {
-			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
 		}*/
+		
 		
 		Model m = new Model();
         PrintWriter out = response.getWriter();
         switch (request.getHeader("Accept").toLowerCase()) {
             case "application/json":
                 response.setContentType("application/json");
-                out.println(m.toString());
+                String keyword = request.getParameter("keyword");
+        		if (keyword == null || keyword == "") {
+        			//response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                    out.println(m.toString());
+        		}else {
+        			out.println(m.GetLength());
+        			//NOTE: itterate over json object here
+        		}
                 break;
             default:
                 response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE); // 415
         }
-		
-		/*ArrayList<Photo> result = new ArrayList<>();
-		for (Photo p : gallery) {
-			if (1 == 1) { //(p.getKeywords().contains(keyword)) {
-				result.add(p);
-			}
-		}*/
-        //response.setContentType("application/json");
-		//response.getWriter().append(result.toString());
 	}
 
 	/**

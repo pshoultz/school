@@ -13,6 +13,6 @@ CREATE TABLE Gallery (
 	PRIMARY KEY (id)
 );
 
-INSERT INTO Gallery VALUES (1, "leonardo da vinci", "https://en.wikipedia.org/wiki/Mona_Lisa", "leonardo, smile, mona", "Louvre Museum", "text/html", "mona lisa");
-INSERT INTO Gallery VALUES (2,"Mchelangelo", "https://en.wikipedia.org/wiki/The_Last_Judgment_(Michelangelo)", "michaelangel, church, italy", "sistine chapel", "text/html", "the last judgement");
-INSERT INTO Gallery VALUES (3, "Vincent Van Goh", "https://en.wikipedia.org/wiki/The_Starry_Night", "vincent, ear", "the museum of modern art", "text/html", "the starry night");
+INSERT INTO Gallery VALUES (1, "leonardo da vinci", "1url", "leonardo, smile, mona", "Louvre Museum", "text/html", "mona lisa");
+INSERT INTO Gallery VALUES (2,"Mchelangelo", "2url", "michaelangel, church, italy", "sistine chapel", "text/html", "the last judgement");
+INSERT INTO Gallery VALUES (3, "Vincent Van Goh", "3url", "vincent, ear", "the museum of modern art", "text/html", "the starry night");

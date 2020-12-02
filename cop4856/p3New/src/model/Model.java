@@ -13,11 +13,13 @@ import entities.DAO;
 
 public class Model {
     private final Library library;
+    private int length = 0;
 
     public Model() {
         library = new Library();
 
         for (Photo p : new DAO().findAll()) {
+        	length++;
             library.add(p);
         }
     }
@@ -25,5 +27,9 @@ public class Model {
     @Override
     public String toString() {
         return library.toString();
+    }
+    
+    public int GetLength() {
+    	return this.length;
     }
 }
