@@ -75,8 +75,11 @@ public class GalleryService extends HttpServlet {
         			//response.sendError(HttpServletResponse.SC_BAD_REQUEST);
                     out.println(m.toString());
         		}else {
-        			out.println(m.GetLength());
-        			//NOTE: itterate over json object here
+        			//out.println(m.GetLength());
+        			//NOTE: iterate over json object here
+        			//m.Find(keyword);
+                    out.println(m.Find(keyword));
+
         		}
                 break;
             default:

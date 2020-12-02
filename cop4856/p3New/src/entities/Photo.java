@@ -13,8 +13,8 @@ public class Photo {
 	private String mime;
 	private String keywords;
 
-	public Photo(int id, String title, String cName, String cURL, String location, String mime,
-			String keywords) {
+	public Photo(int id, String title, String cURL, String keywords, String location, String mime,
+			String cName) {
 		this.setId(id);
 		this.setTitle(title);
 		this.setcName(cName);

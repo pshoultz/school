@@ -17,7 +17,21 @@ public class Library {
         photos.add(p);
     }
 
+    //NOTE: only returns all
     public String toString() {
         return JsonbBuilder.create().toJson(photos);
+    }
+    
+    public List<Photo> Find(String keyword) {
+    	//iterate over list<photo>
+        List<Photo> sortedPhotos = new ArrayList<>();
+
+    	for(Photo p: photos) {
+    		if(p.getKeywords().contains(keyword)) {
+    			sortedPhotos.add(p);
+    		}
+    	}
+    	
+    	return sortedPhotos;
     }
 }

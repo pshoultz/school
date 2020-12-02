@@ -7,6 +7,8 @@ import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.util.List;
+
 
 import entities.Photo;
 import entities.DAO;
@@ -31,5 +33,9 @@ public class Model {
     
     public int GetLength() {
     	return this.length;
+    }
+    
+    public List<Photo> Find(String keyword) {
+    	return library.Find(keyword);
     }
 }
