@@ -12,25 +12,24 @@ import java.util.logging.Logger;
 
 public class DAO {
     // A very simple Data Object abstraction for DB access via JDBC
-    private List<DVD> resultList;
+    private List<Photo> resultList;
 
     public DAO() {
-    	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         Statement stmt = null;
         Connection conn = null;
         ResultSet rs = null;
         final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
-        final String DB_URL = "jdbc:mysql://localhost:3306/DVDLibrary?serverTimezone=UTC&user=root&password=mysql4me";
+        final String DB_URL = "jdbc:mysql://localhost:3306/GalleryLibrary?serverTimezone=UTC&user=root&password=mysql4me";
 
         try {
             resultList = new ArrayList<>();
             Class.forName(DRIVER_NAME);
             conn = DriverManager.getConnection(DB_URL);
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT * from DVDS");
+            rs = stmt.executeQuery("SELECT * from Gallery");
             while (rs.next()) {
-                DVD d = new DVD(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5));
-                resultList.add(d);
+                Photo p = new Photo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getNString(7));
+                resultList.add(p);
             }
         } catch (ClassNotFoundException | SQLException e) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, e);
@@ -45,7 +44,7 @@ public class DAO {
         }
     }
 
-    public List<DVD> findAll() {
+    public List<Photo> findAll() {
         return resultList;
     }
 }

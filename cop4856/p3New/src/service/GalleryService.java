@@ -3,6 +3,7 @@ package service;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.json.bind.Jsonb;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Model;
 // import pojo.Photo;
 import pojo.Photo;
 
@@ -54,7 +56,7 @@ public class GalleryService extends HttpServlet {
 	 */
     //NOTE: use DAO here for get method
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (!request.getHeader("Accept").toLowerCase().equals("application/json")) {
+		/*if (!request.getHeader("Accept").toLowerCase().equals("application/json")) {
 			response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
 			return;
 		}
@@ -62,16 +64,27 @@ public class GalleryService extends HttpServlet {
 		if (keyword == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
-		}
+		}*/
+		
+		Model m = new Model();
+        PrintWriter out = response.getWriter();
+        switch (request.getHeader("Accept").toLowerCase()) {
+            case "application/json":
+                response.setContentType("application/json");
+                out.println(m.toString());
+                break;
+            default:
+                response.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE); // 415
+        }
 		
 		/*ArrayList<Photo> result = new ArrayList<>();
 		for (Photo p : gallery) {
 			if (1 == 1) { //(p.getKeywords().contains(keyword)) {
 				result.add(p);
 			}
-		}
-        response.setContentType("application/json");
-		response.getWriter().append(result.toString());*/
+		}*/
+        //response.setContentType("application/json");
+		//response.getWriter().append(result.toString());
 	}
 
 	/**
